@@ -1,0 +1,41 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_form_mode.media.bt_inline_form
+    - field.field.media.bt_image_gallery.field_bt_images
+    - media_entity.bundle.bt_image_gallery
+  module:
+    - inline_entity_form
+    - workbench_moderation
+id: media.bt_image_gallery.default
+targetEntityType: media
+bundle: bt_image_gallery
+mode: default
+content:
+  field_bt_images:
+    weight: 1
+    settings:
+      form_mode: bt_inline_form
+      override_labels: true
+      label_singular: Image
+      label_plural: Images
+      allow_new: true
+      allow_existing: true
+      match_operator: CONTAINS
+      collapsible: false
+      collapsed: false
+    third_party_settings: {  }
+    type: inline_entity_form_complex
+  name:
+    type: string_textfield
+    weight: 0
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  created: true
+  langcode: true
+  path: true
+  uid: true

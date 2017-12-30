@@ -1,0 +1,11 @@
+services:
+  bt_image_gallery.breadcrumbs:
+    class: Drupal\bt_image_gallery\Breadcrumb\ImageGalleryBreadcrumbBuilder
+    arguments: ['@current_user']
+    tags:
+      - { name: breadcrumb_builder, priority: 1010 }
+  bt_image_gallery_config.overrider:
+    class: Drupal\bt_image_gallery\Config\ConfigImageGalleryOverride
+    arguments: ['@config.factory']
+    tags:
+      - {name: config.factory.override, priority: 25}

@@ -1,0 +1,2 @@
+label: Galería
+pattern: '/galeria/[media:name]'

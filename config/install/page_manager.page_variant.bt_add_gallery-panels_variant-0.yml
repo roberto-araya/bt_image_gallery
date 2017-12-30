@@ -1,0 +1,40 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - page_manager.page.bt_add_gallery
+  module:
+    - entity_forms_in_blocks
+    - panels
+id: bt_add_gallery-panels_variant-0
+label: 'Add Gallery Default'
+variant: panels_variant
+variant_settings:
+  blocks:
+    693e3c95-7c4e-4082-9834-a523c061fee6:
+      id: entity_forms_in_blocks
+      label: 'Entity form in block'
+      provider: entity_forms_in_blocks
+      label_display: '0'
+      entity_type: media
+      bundle: bt_image_gallery
+      form_mode: bt_by_default
+      region: contentmain
+      weight: 0
+      uuid: 693e3c95-7c4e-4082-9834-a523c061fee6
+      context_mapping: {  }
+  id: panels_variant
+  uuid: e5f722d3-8ab4-49f7-b7c3-f850bd285ecb
+  label: null
+  weight: 0
+  layout: radix_boxton
+  layout_settings: {  }
+  page_title: 'Add images gallery'
+  storage_type: page_manager
+  storage_id: bt_add_gallery-panels_variant-0
+  builder: standard
+page: bt_add_gallery
+weight: 0
+selection_criteria: {  }
+selection_logic: and
+static_context: {  }

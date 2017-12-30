@@ -1,0 +1,27 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.media.field_bt_images
+    - media_entity.bundle.image
+    - media_entity.bundle.bt_image_gallery
+id: media.bt_image_gallery.field_bt_images
+field_name: field_bt_images
+entity_type: media
+bundle: bt_image_gallery
+label: 'Add images'
+description: 'Upload several images or select some from your multimedia library.'
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      image: image
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

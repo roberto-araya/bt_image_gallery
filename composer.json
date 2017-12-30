@@ -1,0 +1,24 @@
+{
+  "name": "drupal/bt_image_gallery",
+  "type": "drupal-module",
+  "description": "",
+  "keywords": ["Drupal"],
+  "license": "GPL-2.0+",
+  "authors": [
+    {
+      "name": "Roberto Araya",
+      "email": "roberto.araya@btester.cl",
+      "homepage": "https://www.drupal.org/u/roberto_araya",
+      "role": "Developer"
+    }
+  ],
+  "homepage": "https://www.drupal.org/project/bt_image_gallery",
+  "minimum-stability": "dev",
+  "support": {
+    "issues": "https://www.drupal.org/project/issues/bt_image_gallery",
+    "source": "http://cgit.drupalcode.org/bt_image_gallery"
+  },
+  "require": {
+    "drupal/bt_media": "dev-master"
+  }
+}

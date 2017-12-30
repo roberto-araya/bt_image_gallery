@@ -1,0 +1,94 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.bt_images_gallery
+    - core.entity_form_mode.media.bt_inline_form
+    - field.field.block_content.bt_images_gallery.field_bt_add_gallery
+  module:
+    - field_group
+    - inline_entity_form
+    - workbench_moderation
+third_party_settings:
+  field_group:
+    group_options:
+      children:
+        - group_content
+        - group_appearance
+        - group_block
+      parent_name: ''
+      weight: 0
+      label: Options
+      format_type: tabs
+      format_settings:
+        label: ''
+        id: ''
+        classes: ''
+        direction: horizontal
+    group_content:
+      children:
+        - field_bt_add_galery
+      parent_name: group_options
+      weight: 20
+      label: Content
+      format_type: tab
+      format_settings:
+        label: Content
+        id: ''
+        classes: block-content-group-field
+        formatter: closed
+        description: 'Create a new images gallery to show in this block or select one from your multimedia library.'
+        required_fields: true
+    group_appearance:
+      children: {  }
+      parent_name: group_options
+      weight: 21
+      label: Appearance
+      format_type: tab
+      format_settings:
+        label: Appearance
+        id: ''
+        classes: block-style-group-field
+        formatter: closed
+        description: 'Determine the appearance with which the images gallery will be presented in the block.'
+        required_fields: true
+    group_block:
+      children:
+        - info
+      parent_name: group_options
+      weight: 22
+      label: Block
+      format_type: tab
+      format_settings:
+        label: Block
+        id: ''
+        classes: block-block-group-field
+        formatter: closed
+        description: 'Write a description to identificate this block.'
+        required_fields: true
+id: block_content.bt_images_gallery.default
+targetEntityType: block_content
+bundle: bt_images_gallery
+mode: default
+content:
+  field_bt_add_galery:
+    weight: 2
+    settings:
+      form_mode: bt_inline_form
+      override_labels: true
+      label_singular: 'Images Gallery'
+      label_plural: ''
+      allow_new: true
+      allow_existing: true
+      match_operator: CONTAINS
+    third_party_settings: {  }
+    type: inline_entity_form_complex
+  info:
+    type: string_textfield
+    weight: 2
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  langcode: true

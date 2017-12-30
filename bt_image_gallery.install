@@ -1,0 +1,6 @@
+<?php
+
+function bt_image_gallery_install() {
+    //Add path alias
+    \Drupal::service('path.alias_storage')->save('/app/website/multimedia/add/bt_image_gallery', '/app/website/multimedia/add/image_gallery', 'en');
+}

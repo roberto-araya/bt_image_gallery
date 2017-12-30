@@ -1,0 +1,7 @@
+name: Btester Image Gallery
+type: module
+description: Btester Image Gallery
+core: 8.x
+package: Btester
+dependencies:
+  - bt_media

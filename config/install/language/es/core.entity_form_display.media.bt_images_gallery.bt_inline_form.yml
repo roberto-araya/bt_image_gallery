@@ -1,0 +1,5 @@
+content:
+  field_bt_images:
+    settings:
+      label_singular: Imagen
+      label_plural: Imágenes
