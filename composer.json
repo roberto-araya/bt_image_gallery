@@ -1,7 +1,7 @@
 {
   "name": "drupal/bt_image_gallery",
   "type": "drupal-module",
-  "description": "",
+  "description": "This module extends Btester Media by adding image gallery entity bundle.",
   "keywords": ["Drupal"],
   "license": "GPL-2.0+",
   "authors": [
@@ -19,6 +19,6 @@
     "source": "http://cgit.drupalcode.org/bt_image_gallery"
   },
   "require": {
-    "drupal/bt_media": "dev-master"
+    "drupal/bt_media": "1.x-dev"
   }
 }
