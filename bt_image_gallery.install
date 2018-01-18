@@ -1,6 +1,14 @@
 <?php
 
+/**
+ * @file
+ * Install file of bt_image_gallery module.
+ */
+
+/**
+ * Implements hook_install().
+ */
 function bt_image_gallery_install() {
-    //Add path alias
-    \Drupal::service('path.alias_storage')->save('/app/website/multimedia/add/bt_image_gallery', '/app/website/multimedia/add/image_gallery', 'en');
+  // Add path alias.
+  \Drupal::service('path.alias_storage')->save('/app/website/multimedia/add/bt_image_gallery', '/app/website/multimedia/add/image_gallery', 'en');
 }
