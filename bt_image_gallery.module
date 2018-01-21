@@ -8,6 +8,7 @@
 use Drupal\Core\Routing\RouteMatchInterface;
 use Drupal\Core\Field\BaseFieldDefinition;
 use Drupal\Core\Entity\EntityTypeInterface;
+use Drupal\Core\Entity\EntityInterface;
 
 /**
  * Implements hook_help().
@@ -38,9 +39,9 @@ function bt_image_gallery_theme() {
 }
 
 /**
- * Implements hook_ENTITY_TYPE_alter().
+ * Implements hook_ENTITY_TYPE_insert().
  */
-function bt_image_gallery_media_insert(EntityTypeInterface $entity) {
+function bt_image_gallery_media_insert(EntityInterface $entity) {
   // Convert to lowercase, trim spaces,
   // replace spaces with underscore and then truncate to 60 chars.
   $pathTitle = substr(str_replace(" ", "-", trim(strtolower($entity->label()))), 0, 60);
