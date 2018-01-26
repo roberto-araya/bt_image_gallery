@@ -3,8 +3,8 @@ status: true
 dependencies:
   config:
     - field.storage.media.field_bt_images
-    - media_entity.bundle.image
-    - media_entity.bundle.bt_image_gallery
+    - media.type.image
+    - media.type.bt_image_gallery
 id: media.bt_image_gallery.field_bt_images
 field_name: field_bt_images
 entity_type: media

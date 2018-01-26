@@ -5,7 +5,7 @@ dependencies:
     - core.entity_form_mode.media.bt_inline_form
     - core.entity_form_mode.media.bt_by_default
     - field.field.media.bt_image_gallery.field_bt_images
-    - media_entity.bundle.bt_image_gallery
+    - media.type.bt_image_gallery
   module:
     - inline_entity_form
     - workbench_moderation

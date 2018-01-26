@@ -3,7 +3,7 @@ status: true
 dependencies:
   module:
     - ctools
-    - media_entity
+    - media
 id: bt_gallery
 label: Gallery
 type: 'canonical_entities:media'
