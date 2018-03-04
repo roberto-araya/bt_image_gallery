@@ -7,7 +7,6 @@ dependencies:
     - media.type.bt_image_gallery
   module:
     - inline_entity_form
-    - workbench_moderation
 id: media.bt_image_gallery.bt_inline_form
 targetEntityType: media
 bundle: bt_image_gallery

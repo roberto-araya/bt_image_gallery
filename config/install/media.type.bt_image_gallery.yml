@@ -1,22 +1,14 @@
 langcode: en
-status: true
+status: false
 dependencies:
   module:
-    - workbench_moderation
-third_party_settings:
-  workbench_moderation:
-    enabled: true
-    allowed_moderation_states:
-      - published
-      - archived
-      - draft
-      - needs_review
-    default_moderation_state: draft
+    - media_entity_generic
 id: bt_image_gallery
-label: 'Images gallery'
-description: 'Make a images galery.'
+label: 'Images Gallery'
+description: 'Create an images gallery from your multimedia library''s images.'
 source: generic
 queue_thumbnail_downloads: false
-new_revision: false
-source_configuration: {  }
+new_revision: true
+source_configuration:
+  source_field: field_media_generic
 field_map: {  }

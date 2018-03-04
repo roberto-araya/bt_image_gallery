@@ -2,12 +2,17 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.field.paragraph.bt_prg_gallery.field_bt_gallery
+    - field.field.paragraph.bt_prg_gallery.field_bt_galery
     - paragraphs.paragraphs_type.bt_prg_gallery
   module:
+    - field_layout
     - field_states_ui
     - inline_entity_form
-    - workbench_moderation
+    - layout_discovery
+third_party_settings:
+  field_layout:
+    id: layout_onecol
+    settings: {  }
 id: paragraph.bt_prg_gallery.default
 targetEntityType: paragraph
 bundle: bt_prg_gallery
@@ -18,13 +23,13 @@ content:
     settings:
       form_mode: default
       override_labels: true
-      label_singular: Galería
-      label_plural: Galerías
-      allow_new: true
+      label_singular: Gallery
+      label_plural: Galleries
       allow_existing: true
       match_operator: CONTAINS
       collapsible: false
       collapsed: false
+      allow_new: false
     third_party_settings:
       field_states_ui:
         form:
@@ -32,6 +37,7 @@ content:
           list: ''
           add: Add
     type: inline_entity_form_complex
+    region: content
 hidden:
   created: true
   status: true
