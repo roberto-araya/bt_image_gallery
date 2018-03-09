@@ -2,7 +2,7 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.field.paragraph.bt_prg_gallery.field_bt_galery
+    - field.field.paragraph.bt_prg_gallery.field_bt_gallery
     - paragraphs.paragraphs_type.bt_prg_gallery
   module:
     - field_layout
