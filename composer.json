@@ -21,6 +21,6 @@
     "source": "http://cgit.drupalcode.org/bt_image_gallery"
   },
   "require": {
-    "drupal/bt_media": "1.x-dev"
+    "drupal/bt_media": "dev-dev"
   }
 }
