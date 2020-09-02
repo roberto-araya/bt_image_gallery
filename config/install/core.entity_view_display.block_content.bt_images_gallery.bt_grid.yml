@@ -1,0 +1,40 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.bt_images_gallery
+    - core.entity_view_mode.block_content.bt_grid
+    - field.field.block_content.bt_images_gallery.field_bt_blq_desc
+    - field.field.block_content.bt_images_gallery.field_bt_blq_title
+    - field.field.block_content.bt_images_gallery.field_bt_images
+    - image.style.bt_square_100x100
+  module:
+    - layout_builder
+    - photoswipe
+third_party_settings:
+  layout_builder:
+    allow_custom: false
+    enabled: false
+id: block_content.bt_images_gallery.bt_grid
+targetEntityType: block_content
+bundle: bt_images_gallery
+mode: bt_grid
+content:
+  field_bt_images:
+    type: photoswipe_field_formatter
+    weight: 0
+    label: hidden
+    settings:
+      photoswipe_node_style_first: bt_square_100x100
+      photoswipe_node_style: bt_square_100x100
+      photoswipe_image_style: ''
+      photoswipe_reference_image_field: field_bt_image
+      photoswipe_caption: node_title
+      photoswipe_caption_custom: ''
+      photoswipe_view_mode: bt_grid
+    third_party_settings: {  }
+    region: content
+hidden:
+  field_bt_blq_desc: true
+  field_bt_blq_title: true
+  langcode: true

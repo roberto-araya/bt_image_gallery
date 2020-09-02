@@ -5,7 +5,7 @@
   "keywords": [
     "Drupal"
   ],
-  "license": "GPL-2.0+",
+  "license": "GPL-2.0-or-later",
   "authors": [
     {
       "name": "Roberto Araya",
@@ -21,6 +21,8 @@
     "source": "http://cgit.drupalcode.org/bt_image_gallery"
   },
   "require": {
-    "drupal/bt_media": "dev-dev"
+    "drupal/bt_image": "dev-1.x",
+    "drupal/bt_cbc": "dev-1.x",
+    "drupal/photoswipe": "dev-3.x"
   }
 }

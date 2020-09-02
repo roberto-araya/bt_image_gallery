@@ -11,7 +11,18 @@ use Drupal\Core\Config\ConfigFactory;
  */
 class ConfigImageGalleryOverride implements ConfigFactoryOverrideInterface {
 
+  /**
+   * View configuration object of bt_content.
+   *
+   * @var viewsAdminContent
+   */
   private $viewsAdminMedia;
+
+  /**
+   * Editorial workflow configuration object.
+   *
+   * @var workflow
+   */
   private $viewsFullAdminMedia;
 
   /**
@@ -26,7 +37,7 @@ class ConfigImageGalleryOverride implements ConfigFactoryOverrideInterface {
    * {@inheritdoc}
    */
   public function loadOverrides($names) {
-    $overrides = array();
+    $overrides = [];
 
     $media_values = [
       'bt_image_gallery' => 'bt_image_gallery',

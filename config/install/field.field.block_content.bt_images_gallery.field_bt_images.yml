@@ -3,14 +3,14 @@ status: true
 dependencies:
   config:
     - block_content.type.bt_images_gallery
-    - field.storage.block_content.field_bt_add_gallery
-    - media.type.bt_image_gallery
-id: block_content.bt_images_gallery.field_bt_add_gallery
-field_name: field_bt_add_gallery
+    - field.storage.block_content.field_bt_images
+    - media.type.bt_image
+id: block_content.bt_images_gallery.field_bt_images
+field_name: field_bt_images
 entity_type: block_content
 bundle: bt_images_gallery
-label: 'Add images gallery'
-description: 'Create an images gallery or select one from your multimedia library.'
+label: Images
+description: 'Gallery images.'
 required: true
 translatable: false
 default_value: {  }
@@ -19,7 +19,7 @@ settings:
   handler: 'default:media'
   handler_settings:
     target_bundles:
-      bt_image_gallery: bt_image_gallery
+      bt_image: bt_image
     sort:
       field: _none
     auto_create: false

@@ -1,6 +1,0 @@
-langcode: en
-status: true
-dependencies: {  }
-id: bt_prg_gallery
-label: Gallery
-behavior_plugins: {  }
