@@ -1,7 +1,7 @@
 name: Btester Image Gallery
 type: module
 description: Btester Image Gallery
-core_version_requirement: ^8.8
+core_version_requirement: ^9.2
 package: Btester
 dependencies:
   - bt_image:bt_image

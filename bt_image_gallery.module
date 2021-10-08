@@ -9,6 +9,7 @@ use Drupal\Core\Routing\RouteMatchInterface;
 use Drupal\Core\Field\BaseFieldDefinition;
 use Drupal\Core\Entity\EntityTypeInterface;
 use Drupal\Core\Entity\EntityInterface;
+use Drupal\path_alias\Entity\PathAlias;
 
 /**
  * Implements hook_help().
@@ -47,9 +48,23 @@ function bt_image_gallery_media_insert(EntityInterface $entity) {
   $pathTitle = substr(str_replace(" ", "-", trim(strtolower($entity->label()))), 0, 60);
 
   if ($entity->bundle() == 'bt_image_gallery') {
-    \Drupal::service('path.alias_storage')->save("/media/" . $entity->id() . '/edit', "/gallery/" . $pathTitle . '/edit', "en");
-    \Drupal::service('path.alias_storage')->save("/media/" . $entity->id() . '/delete', "/gallery/" . $pathTitle . '/delete', "en");
-    \Drupal::service('path.alias_storage')->save("/media/" . $entity->id() . '/latest', "/gallery/" . $pathTitle . '/latest', "en");
+    $path_alias = PathAlias::create([
+      'path' => '/media/' . $entity->id() . '/edit',
+      'alias' => '/gallery/' . $pathTitle . '/edit',
+    ]);
+    $path_alias->save();
+
+    $path_alias = PathAlias::create([
+      'path' => '/media/' . $entity->id() . '/delete',
+      'alias' => '/gallery/' . $pathTitle . '/delete',
+    ]);
+    $path_alias->save();
+
+    $path_alias = PathAlias::create([
+      'path' => '/media/' . $entity->id() . '/latest',
+      'alias' => '/gallery/' . $pathTitle . '/latest',
+    ]);
+    $path_alias->save();
   }
 }
 

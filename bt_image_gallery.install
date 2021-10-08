@@ -5,10 +5,17 @@
  * Install file of bt_image_gallery module.
  */
 
+use Drupal\path_alias\Entity\PathAlias;
+
 /**
  * Implements hook_install().
  */
 function bt_image_gallery_install() {
   // Add path alias.
-  \Drupal::service('path.alias_storage')->save('/app/website/multimedia/add/bt_image_gallery', '/app/website/multimedia/add/image_gallery', 'en');
+  $path_alias = PathAlias::create([
+    'path' => '/app/website/multimedia/add/bt_image_gallery',
+    'alias' => '/app/website/multimedia/add/image_gallery',
+  ]);
+  $path_alias->save();
+
 }
