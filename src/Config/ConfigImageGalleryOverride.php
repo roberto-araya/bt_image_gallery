@@ -3,8 +3,8 @@
 namespace Drupal\bt_image_gallery\Config;
 
 use Drupal\Core\Cache\CacheableMetadata;
-use Drupal\Core\Config\ConfigFactoryOverrideInterface;
 use Drupal\Core\Config\ConfigFactory;
+use Drupal\Core\Config\ConfigFactoryOverrideInterface;
 
 /**
  * Example configuration override.
