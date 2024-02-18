@@ -28,7 +28,7 @@ jobs:
   build-php-8.1-legacy:
     <<: *container_config
     docker:
-      - image: circleci/php:8.1-cli-browsers
+      - image: cimg/php:8.1-browsers
     environment:
       DRUPAL_VERSION: 9.4.15
       DRUPAL_PROJECT_SHA: 9.4.15
