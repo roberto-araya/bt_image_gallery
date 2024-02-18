@@ -70,7 +70,7 @@ if [ -n "${DRUPAL_VERSION}" ] && [ -n "${DRUPAL_PROJECT_SHA}" ]; then
   echo "==> Initialise Drupal site from the scaffold commit ${DRUPAL_PROJECT_SHA}."
 
   # Clone Drupal core at the specific commit SHA.
-  git clone -n https://github.com/drupal-composer/drupal-project.git "${BUILD_DIR}"
+  git clone -n https://github.com/btestercl/drupal-test-project "${BUILD_DIR}"
   git --git-dir="${BUILD_DIR}/.git" --work-tree="${BUILD_DIR}" checkout "${DRUPAL_PROJECT_SHA}"
   rm -rf "${BUILD_DIR}/.git" > /dev/null
 
@@ -91,9 +91,18 @@ cat <<< "$(jq --indent 4 -M -s '.[0] * .[1]' composer.json "${BUILD_DIR}/compose
 php -d memory_limit=-1 "$(command -v composer)" --working-dir="${BUILD_DIR}" update --lock
 
 echo "==> Install other dev dependencies."
-cat <<< "$(jq --indent 4 '.extra["phpcodesniffer-search-depth"] = 10' "${BUILD_DIR}/composer.json")" > "${BUILD_DIR}/composer.json"
-php -d memory_limit=-1 "$(command -v composer)" --working-dir="${BUILD_DIR}" require --dev dealerdirect/phpcodesniffer-composer-installer
-php -d memory_limit=-1 "$(command -v composer)" --working-dir="${BUILD_DIR}" require --dev phpspec/prophecy-phpunit:^2
+#cat <<< "$(jq --indent 4 '.extra["phpcodesniffer-search-depth"] = 10' "${BUILD_DIR}/composer.json")" > "${BUILD_DIR}/composer.json"
+#php -d memory_limit=-1 "$(command -v composer)" --working-dir="${BUILD_DIR}" require --dev dealerdirect/phpcodesniffer-composer-installer
+#php -d memory_limit=-1 "$(command -v composer)" --working-dir="${BUILD_DIR}" require --dev phpspec/prophecy-phpunit:^2
+php -d memory_limit=-1 "$(command -v composer)" --working-dir="${BUILD_DIR}" require --dev \
+  dealerdirect/phpcodesniffer-composer-installer \
+  phpspec/prophecy-phpunit:^2 \
+  mglaman/drupal-check \
+  palantirnet/drupal-rector \
+  drupal/coder \
+  symfony/phpunit-bridge
+cp "${BUILD_DIR}/vendor/palantirnet/drupal-rector/rector.php" "${BUILD_DIR}/."
+
 
 echo "==> Start inbuilt PHP server at http://${WEBSERVER_HOST}:${WEBSERVER_PORT} in $(pwd)/${BUILD_DIR}/web."
 # Stop previously started services.
